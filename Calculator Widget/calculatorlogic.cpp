@@ -8,8 +8,6 @@ CalculatorLogic::CalculatorLogic(QWidget *parent) : QWidget(parent)
 
 void CalculatorLogic::doCommand(QString q)
 {
-    QTextStream out(stdout);
-
     if(q>="0" && q<="9"){
         if(operandStack.empty()){
             operandStack.push(q);
@@ -47,6 +45,7 @@ void CalculatorLogic::doCommand(QString q)
             operandStack.pop();
         while(!operatorStack.empty())
             operatorStack.pop();
+        buffer = "";
         emit resultChanged("");
     }
     else if(q == "√"){
@@ -69,41 +68,38 @@ void CalculatorLogic::doCommand(QString q)
         }
     }
     else if(q=="+" || q=="-" || q=="*" || q == "/"){
-        if(!operatorStack.empty() && StackSize()){
-            out << "Entered";
-                while(!operatorStack.empty() &&(GetPrecedence(operatorStack.last()) >= GetPrecedence(q))){
-                    out << "While";
-                    double right = operandStack.pop().toDouble();
-                    QString operation = operatorStack.pop();
-                    double left = operandStack.pop().toDouble();
-                    double result = Calculate(left, right, operation);
-                    operandStack.push(QString::number(result));
-                }
-            out << "Finished";
+        if(!StackSize())
+            return;
+        if(operandStack.last().toDouble()<0)
+            buffer+="(" + operandStack.last() + ")";
+        else
+            buffer+=operandStack.last();
+        if(!operatorStack.empty()){
+                while(!operatorStack.empty() &&(GetPrecedence(operatorStack.last()) >= GetPrecedence(q)))
+                    Process();
             operatorStack.push(q);
         }
         else
             operatorStack.push(q);
+        buffer+=q;
+        emit resultChanged(operandStack.last());
     }
     else if(q=="="){
-        if(!operandStack.empty()){
-            double result;
-
-            while(operandStack.size()>1){
-                 double right = operandStack.pop().toDouble();
-                 QString operation = operatorStack.pop();
-                 double left = operandStack.pop().toDouble();
-                 result = Calculate(left,right,operation);
-                 changes+= QString::number(left) + operation + QString::number(right) + "=" + QString::number(result) + ";";
-                 operandStack.push(QString::number(result));
-                 emit resultChanged(QString::number(result));
-                 emit resultHistoryChanged(changes);
-            }
-            //changes+= "=" + QString::number(result) + ";";
-            //while(!operandStack.empty())
-            //    operandStack.pop();
-            //emit resultHistoryChanged(changes);
-            //emit resultChanged("");
+        if(!operandStack.empty()){            
+            if(operandStack.last().toDouble()<0)
+                buffer+="(" + operandStack.last() + ")";
+            else
+                buffer+=operandStack.last();
+            while(operandStack.size()>1)
+                Process();
+            buffer+= "=" + operandStack.last();
+            changes+=buffer+";";
+            buffer = "";
+            if(operandStack.last() == "0")
+                emit resultChanged(operandStack.pop());
+            else
+                emit resultChanged(operandStack.last());
+            emit resultHistoryChanged(changes);
         }
     }
 }
@@ -116,6 +112,14 @@ double CalculatorLogic::Calculate(double left, double right, QString operation){
     if(operation == "*")
         return left*right;
     return left/right;
+}
+
+void CalculatorLogic::Process(){
+    double right = operandStack.pop().toDouble();
+    QString operation = operatorStack.pop();
+    double left = operandStack.pop().toDouble();
+    double result = Calculate(left, right, operation);
+    operandStack.push(QString::number(result));
 }
 
 bool CalculatorLogic::StackSize()

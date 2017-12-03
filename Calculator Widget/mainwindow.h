@@ -17,14 +17,15 @@ public:
     ~MainWindow();
 
 private slots:
-    void onBtnClicked();
-    void onResultChanged(QString);
-    void onResultHistoryChanged(QString);
+    void onBtnClicked();                        //Slot that triggers when any button is clicked
+    void onResultChanged(QString);              //Slot that triggers when resultChanged signal is emitted
+    void onResultHistoryChanged(QString);       //Slot that triggers when resultHistoryChanged signal is emiitted
 
 private:
     Ui::MainWindow *ui;
-    CalculatorLogic *logic;
-    void ConnectElements();
+
+    CalculatorLogic *logic;                     //CalculatorLogic object instance
+    void ConnectElements();                     //Method that connects all signals and slots
 
 };
 
