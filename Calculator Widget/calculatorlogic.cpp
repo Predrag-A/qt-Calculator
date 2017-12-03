@@ -118,8 +118,7 @@ void CalculatorLogic::Process(){
     double right = operandStack.pop().toDouble();
     QString operation = operatorStack.pop();
     double left = operandStack.pop().toDouble();
-    double result = Calculate(left, right, operation);
-    operandStack.push(QString::number(result));
+    operandStack.push(QString::number(Calculate(left, right, operation)));
 }
 
 bool CalculatorLogic::StackSize()

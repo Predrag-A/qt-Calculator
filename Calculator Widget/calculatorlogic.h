@@ -21,7 +21,7 @@ signals:
 public slots:
 
 private:
-    double Calculate(double, double, QString);  //Method that calculates two doubles
+    double Calculate(double, double, QString);  //Calculates two doubles depending on the operator
     bool StackSize();                           //Compares operandStack and operatorStack size
     int GetPrecedence(QString);                 //Returns precedence value of operators
     void Process();                             //Pops two operands and an operator, calculates and pushes the result

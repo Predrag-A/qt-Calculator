@@ -69,6 +69,9 @@
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout">
+          <property name="spacing">
+           <number>2</number>
+          </property>
           <item row="3" column="0">
            <widget class="QPushButton" name="btn0">
             <property name="sizePolicy">
@@ -88,6 +91,12 @@
             <property name="shortcut">
              <string>0</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="0" column="4">
@@ -105,6 +114,12 @@
             </property>
             <property name="text">
              <string>AC</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -127,6 +142,12 @@
             <property name="shortcut">
              <string>9</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="0" column="3">
@@ -147,6 +168,12 @@
             </property>
             <property name="shortcut">
              <string>/</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -169,6 +196,12 @@
             <property name="shortcut">
              <string>8</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="1" column="3">
@@ -190,6 +223,15 @@
             <property name="shortcut">
              <string>*</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="1" column="4">
@@ -208,6 +250,12 @@
             <property name="text">
              <string>C</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="2" column="4">
@@ -225,6 +273,12 @@
             </property>
             <property name="text">
              <string>±</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -247,6 +301,12 @@
             <property name="shortcut">
              <string>.</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="2" column="1">
@@ -267,6 +327,12 @@
             </property>
             <property name="shortcut">
              <string>2</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -289,6 +355,12 @@
             <property name="shortcut">
              <string>3</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="2" column="0">
@@ -309,6 +381,12 @@
             </property>
             <property name="shortcut">
              <string>1</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -331,6 +409,12 @@
             <property name="shortcut">
              <string>6</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="3" column="2">
@@ -351,6 +435,12 @@
             </property>
             <property name="shortcut">
              <string>+</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -385,6 +475,12 @@
             <property name="shortcut">
              <string>7</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="3" column="3">
@@ -405,6 +501,12 @@
             </property>
             <property name="shortcut">
              <string>Return</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -427,6 +529,12 @@
             <property name="shortcut">
              <string>4</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="2" column="3">
@@ -448,6 +556,12 @@
             <property name="shortcut">
              <string>-</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="3" column="4">
@@ -465,6 +579,12 @@
             </property>
             <property name="text">
              <string>√</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -486,6 +606,12 @@
             </property>
             <property name="shortcut">
              <string>5</string>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
