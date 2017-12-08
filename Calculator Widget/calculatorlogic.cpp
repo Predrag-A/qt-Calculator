@@ -36,8 +36,10 @@ void CalculatorLogic::doCommand(QString q)
     }
     else if(q == "C"){
         if(!operandStack.empty()){
-                operandStack.pop();
-                emit resultChanged("");
+                QString popped = operandStack.pop();
+                popped = popped.left(popped.size()-1);
+                operandStack.push(popped);
+                emit resultChanged(operandStack.top());
         }
     }
     else if(q == "AC"){
